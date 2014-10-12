@@ -32,4 +32,4 @@ Example:
 Questions?
 ----------
 
-If you have any questions about the code or the paper, please email naveed2 at illinois dot edu.
+If you have any questions about the code or the paper, please email at naveed2 at illinois dot edu.
