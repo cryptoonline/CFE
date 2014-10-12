@@ -26,7 +26,6 @@ public class NMPKE {
         generateKeys(keysize);
         try {
             cipher = Cipher.getInstance("RSA/None/OAEPWithSHA1AndMGF1Padding", "BC");
-//            cipher = Cipher.getInstance("RSA");
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (NoSuchPaddingException e) {

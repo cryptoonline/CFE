@@ -22,23 +22,10 @@ public class CFE {
         nmPKE = new NMPKE(securityParameter);
     }
 
-//    public void setup(int securityParameter) {
-//        this.securityParameter = securityParameter;
-//
-//        nmPKE = new NMPKE(securityParameter);
-//    }
-
     public long keygen(ArrayList<Pair<Integer, Integer>> f, Map<Integer, byte[]> rCT) {
         long garblingKey = 0;
 
-//        byte[][] rPT = new byte[rCT.size()][numBytesInSingleEncryption];
         Map<Integer, byte[]> rPT = new HashMap<>();
-
-
-
-//        for (int i = 0; i < rCT.size(); i++) {
-//            rPT[i] = nmPKE.decrypt(rCT.get(rCT.));
-//        }
 
         int it = 0;
         for (Map.Entry<Integer, byte[]> entry : rCT.entrySet()) {
@@ -51,7 +38,6 @@ public class CFE {
         byte[] rs_required = new byte[f.size() * 4];
 
         for (int i = 0; i < f.size(); i++) {
-//            int requiredBlock = (int) Math.floor((double) f.get(i).getL() / (double) (numBytesInSingleEncryption/4));
             int requiredBlock = (int) Math.floor((double) f.get(i).getL() / (double) (numBytesInSingleEncryption / 4));
             int requiredElement = f.get(i).getL() % (numBytesInSingleEncryption / 4);
             byte temp[] = rPT.get(requiredBlock);
@@ -97,8 +83,6 @@ public class CFE {
     public long Dec(ArrayList<Pair<Integer, Integer>> f, int[] ct2, long garblingKey) {
         long output = -garblingKey;
 
-//        int[] ct2 = CT.getR();
-
         for (int i = 0; i < ct2.length; i++) {
             output += ct2[i] * f.get(i).getR();
         }
@@ -111,7 +95,6 @@ public class CFE {
         SecureRandom rand = new SecureRandom();
         for (int i = 0; i < size; i++) {
             R[i] = rand.nextInt();
-//            R[i] = i;
         }
         return R;
     }
