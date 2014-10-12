@@ -15,9 +15,15 @@ Execution
 ----------
 To run the code use the following command (note that command line arguments are needed):
 
-    java -cp "src:lib/bcprov-jdk15on-151.jar" Test <Size of the data vector> <Size of the function vector> <Key size> <Iterations>
+    java -cp "src:lib/bcprov-jdk15on-151.jar" Test <dataVectorSize> <functionVectorSize> <keysize> <iterations>
 
-Choose one of the following as key size 1024, 2048, 3072, or 4096.
+**Command Line Arguments**  
+*dataVectorSize*: Size of the data vector. Data vector is the one on which computation needs to be done.  
+*functionVectorSize*: Size of the function vector. Function vector is used by the party who wants to compute the function. Size of function vector should be less than or equal to the dataVectorSize.  
+*keysize*: This is the keysize for the underlying public key encryption. Choose one of the following as key size 1024, 2048, 3072, or 4096.  
+*iterations*: Number of times code should be exectued
+
+Please read the [paper](https://web.engr.illinois.edu/~naveed2/pub/CCS2014CFE.pdf) for more details about these parameters.
 
 Example:
 
