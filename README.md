@@ -28,3 +28,8 @@ Please read the [paper](https://web.engr.illinois.edu/~naveed2/pub/CCS2014CFE.pd
 Example:
 
     java -cp "src:lib/bcprov-jdk15on-151.jar" Test 20000 100 2048 10
+
+Questions?
+----------
+
+If you have any questions about the code or the paper, please email naveed2 at illinois dot edu.
