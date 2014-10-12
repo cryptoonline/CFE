@@ -3,8 +3,7 @@ CFE
 
 The repository contains code for the superfast Controlled Functional Encryption (CFE) construction that allows to compute the actual value of inner product of two vectors (and not the orthogonality testing). Currently, the repository do not have the code for our general construction. Both superfast and general CFE constructions were proposed in the following paper:
 
-**Controlled Functional Encryption**. Muhammad Naveed, Shashank Agrawal, Manoj Prabhakaran, Xiaofeng Wang, Erman Ayday, Jean-Pierre Hubaux and Carl A. Gunter. *In ACM Conference on Computer and Communications Security (CCS), 2014*.
-Link to the paper: https://web.engr.illinois.edu/~naveed2/pub/CCS2014CFE.pdf
+[**Controlled Functional Encryption**!](https://web.engr.illinois.edu/~naveed2/pub/CCS2014CFE.pdf). Muhammad Naveed, Shashank Agrawal, Manoj Prabhakaran, Xiaofeng Wang, Erman Ayday, Jean-Pierre Hubaux and Carl A. Gunter. *In ACM Conference on Computer and Communications Security (CCS), 2014*.
 
 Compilation
 ------------
