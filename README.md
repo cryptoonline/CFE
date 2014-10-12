@@ -13,7 +13,7 @@ To compile the code, run following command from the main repository directory (i
 
 Execution
 ----------
-To run the code use the following format:
+To run the code use the following command (note that command line arguments are needed):
 
     java -cp "src:lib/bcprov-jdk15on-151.jar" Test <Size of the data vector> <Size of the function vector> <Key size> <Iterations>
 
