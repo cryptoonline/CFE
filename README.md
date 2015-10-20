@@ -15,7 +15,7 @@ Execution
 ----------
 To run the code use the following command (note that command line arguments are needed):
 
-    java -cp "src:lib/bcprov-jdk15on-151.jar" Test <dataVectorSize> <functionVectorSize> <keysize> <iterations>
+    java -cp "src:lib/bcprov-jdk15on-151.jar" Test <dataVectorSize> <functionVectorSize> <keysize>
 
 **Command Line Arguments**  
 *dataVectorSize*: Size of the data vector. Data vector is the one on which computation needs to be done.  
@@ -27,7 +27,7 @@ Please read the [paper](https://web.engr.illinois.edu/~naveed2/pub/CCS2014CFE.pd
 
 Example:
 
-    java -cp "src:lib/bcprov-jdk15on-151.jar" Test 20000 100 2048 10
+    java -cp "src:lib/bcprov-jdk15on-151.jar" Test 20000 100 2048
 
 Questions?
 ----------
