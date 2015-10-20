@@ -17,20 +17,20 @@ public class Test {
         final int size = Integer.parseInt(args[0]);
         final int functionSize = Integer.parseInt(args[1]);
         final int securityParameter = Integer.parseInt(args[2]);
-        final int iterations = Integer.parseInt(args[3]);
-
+//        final int iterations = Integer.parseInt(args[3]);
+	int iterations = 1;
     	final int minPaddingSizeBytes = 44;
         final int numBytesInSingleEncryption = securityParameter / 8 - minPaddingSizeBytes;
 
-            System.out.println("Format for excel output is: " +
-                    "plaintext size, " +
-                    "encryption time, " +
-                    "ciphertext size, ratio of ciphertext to plaintext size, " +
-                    "function size, " +
-                    "key generation time, " +
-                    "size of the message sent to authority, " +
-                    "decryption time (ns)" +
-                    "decryptiom time (ms)");
+//            System.out.println("Format for excel output is: " +
+//                    "plaintext size, " +
+//                    "encryption time, " +
+//                    "ciphertext size, ratio of ciphertext to plaintext size, " +
+//                    "function size, " +
+//                    "key generation time, " +
+//                    "size of the message sent to authority, " +
+//                    "decryption time (ns)" +
+//                    "decryptiom time (ms)");
 
             int n = 0;
             for (int i = 0; n <= size + minPaddingSizeBytes / 4; i++) {
@@ -92,10 +92,10 @@ public class Test {
                 double decryptionStartTime = System.nanoTime();
                 double decryptionStartTimems = System.currentTimeMillis();
                 long output = fe.Dec(f, partial_rCT2, garblingKey);
-                double decryptionTime = (System.nanoTime() - decryptionStartTime) / 1000000;
+                double decryptionTime = (System.nanoTime() - decryptionStartTime) / (double)1000;
                 double decryptionTimems = System.currentTimeMillis() - decryptionStartTimems;
 
-                System.out.print("Iteration " + iter + ": ");
+//                System.out.print("Iteration " + iter + ": ");
                 String result =
                         size + ", " +
                                 encryptionTime + ", " +
@@ -105,8 +105,14 @@ public class Test {
                                 messageClientToAuthoritySize + ", " +
                                 decryptionTime + ", " +
                                 decryptionTimems;
-                store(size + "_" + functionSize + "_" + securityParameter, result);
-                System.out.println(n * 4 + ", " + encryptionTime + ", " + encryptionSize + ", " + f.size() * 8 + ", " + keygenTime + ", " + messageClientToAuthoritySize + ", " + decryptionTime + ", " + decryptionTimems);
+//                store(size + "_" + functionSize + "_" + securityParameter, result);
+		System.out.println("**********ENCRYPTION**********"); 
+                System.out.println("Encryption time: " + encryptionTime/1000 + "seconds" + "\n");
+
+		System.out.println("**********KEY GENERATION**********"); 
+System.out.println("Upstream bandwidth: " + messageClientToAuthoritySize/1024 + "KBytes\n" + "Downstream bandwidth: 8Bytes\n" + "Key generation time: " + keygenTime/1000 + "seconds\n");
+		System.out.println("**********DECRYPTION**********"); 
+System.out.println("Decryption time: " + decryptionTime + " MICRO seconds");
         }
     }
 
